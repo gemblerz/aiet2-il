@@ -11,7 +11,7 @@ if [ -z "$POLICY" ]; then
 fi
 shift || true
 
-LEROBOT_DIR="${LEROBOT_DIR:-$HOME/repo/lerobot}"
+LEROBOT_DIR="${LEROBOT_DIR:-$REPO_ROOT/../lerobot}"
 DATASET_REPO_ID="${DATASET_REPO_ID:-dominicdx/so101_overhead}"
 EPOCHS="${EPOCHS:-8}"
 BATCH_SIZE="${BATCH_SIZE:-8}"

@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-LEROBOT_DIR="${1:-$HOME/repo/lerobot}"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+
+LEROBOT_DIR="${1:-$REPO_ROOT/../lerobot}"
 PYTHON_BIN="${PYTHON_BIN:-python3}"
 BRANCH="${BRANCH:-main}"
 UPDATE_EXISTING="${UPDATE_EXISTING:-0}"

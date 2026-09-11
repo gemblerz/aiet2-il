@@ -11,13 +11,13 @@ nvidia-smi
 ## 1) Install LeRobot with VLA extras (outside this repo)
 
 ```bash
-cd /home/yonghokim/repo/aiet2-il
+cd <repo-root>
 chmod +x scripts/install_lerobot.sh scripts/train_vla_policy.sh scripts/train_vla_duo_8epochs.sh
 PIP_INDEX_URL=https://pypi.org/simple \
 PIP_EXTRA_INDEX_URL= \
 INSTALL_EXTRAS=training,smolvla,pi \
 ./scripts/install_lerobot.sh
-source ~/repo/lerobot/.venv/bin/activate
+source ../lerobot/.venv/bin/activate
 lerobot-info
 ```
 
@@ -30,24 +30,24 @@ hf auth login
 ## 3) Train SmolVLA for 8 epochs (2 GPUs)
 
 ```bash
-cd /home/yonghokim/repo/aiet2-il
-source ~/repo/lerobot/.venv/bin/activate
+cd <repo-root>
+source ../lerobot/.venv/bin/activate
 CUDA_VISIBLE_DEVICES=0,1 NUM_PROCESSES=2 EPOCHS=8 DEVICE=cuda ./scripts/train_vla_policy.sh smolvla
 ```
 
 ## 4) Train Pi0.5 for 8 epochs (2 GPUs)
 
 ```bash
-cd /home/yonghokim/repo/aiet2-il
-source ~/repo/lerobot/.venv/bin/activate
+cd <repo-root>
+source ../lerobot/.venv/bin/activate
 CUDA_VISIBLE_DEVICES=0,1 NUM_PROCESSES=2 EPOCHS=8 DEVICE=cuda ./scripts/train_vla_policy.sh pi05
 ```
 
 ## 5) Train both sequentially
 
 ```bash
-cd /home/yonghokim/repo/aiet2-il
-source ~/repo/lerobot/.venv/bin/activate
+cd <repo-root>
+source ../lerobot/.venv/bin/activate
 CUDA_VISIBLE_DEVICES=0,1 NUM_PROCESSES=2 EPOCHS=8 DEVICE=cuda ./scripts/train_vla_duo_8epochs.sh
 ```
 
@@ -69,10 +69,10 @@ accelerate launch --num_processes=2
 
 ```text
 Full logs:
-/home/yonghokim/repo/aiet2-il/artifacts/logs/
+./artifacts/logs/
 
 Checkpoints and outputs:
-/home/yonghokim/repo/aiet2-il/artifacts/train/
+./artifacts/train/
 ```
 
 ## 8) Monitoring (equivalent to TensorBoard)
@@ -95,4 +95,4 @@ dominicdx/so101_overhead
 
 ## 10) GR00T N1.7
 
-Use guide: [docs/groot_so101.md](/home/yonghokim/repo/aiet2-il/docs/groot_so101.md)
+Use guide: [docs/groot_so101.md](./groot_so101.md)

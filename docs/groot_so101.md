@@ -3,13 +3,13 @@
 ## 0) Install LeRobot with GR00T support
 
 ```bash
-cd /home/yonghokim/repo/aiet2-il
+cd <repo-root>
 chmod +x scripts/install_lerobot.sh scripts/train_vla_policy.sh
 PIP_INDEX_URL=https://pypi.org/simple \
 PIP_EXTRA_INDEX_URL= \
 INSTALL_EXTRAS=training,groot \
 ./scripts/install_lerobot.sh
-source ~/repo/lerobot/.venv/bin/activate
+source ../lerobot/.venv/bin/activate
 lerobot-info
 ```
 
@@ -22,8 +22,8 @@ hf auth login
 ## 2) Train GR00T N1.7 (embodiment via prompt)
 
 ```bash
-cd /home/yonghokim/repo/aiet2-il
-source ~/repo/lerobot/.venv/bin/activate
+cd <repo-root>
+source ../lerobot/.venv/bin/activate
 CUDA_VISIBLE_DEVICES=0,1 NUM_PROCESSES=2 EPOCHS=8 DEVICE=cuda ./scripts/train_vla_policy.sh groot
 ```
 
@@ -36,8 +36,8 @@ new_embodiment
 ## 3) Train GR00T N1.7 (non-interactive mode)
 
 ```bash
-cd /home/yonghokim/repo/aiet2-il
-source ~/repo/lerobot/.venv/bin/activate
+cd <repo-root>
+source ../lerobot/.venv/bin/activate
 CUDA_VISIBLE_DEVICES=0,1 \
 NUM_PROCESSES=2 \
 EPOCHS=8 \
@@ -61,8 +61,8 @@ EMBODIMENT_TAG=new_embodiment \
 
 ```text
 Logs:
-/home/yonghokim/repo/aiet2-il/artifacts/logs/
+./artifacts/logs/
 
 Checkpoints:
-/home/yonghokim/repo/aiet2-il/artifacts/train/
+./artifacts/train/
 ```

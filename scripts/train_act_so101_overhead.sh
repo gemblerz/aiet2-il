@@ -4,7 +4,7 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 
-LEROBOT_DIR="${LEROBOT_DIR:-$HOME/repo/lerobot}"
+LEROBOT_DIR="${LEROBOT_DIR:-$REPO_ROOT/../lerobot}"
 DATASET_REPO_ID="${DATASET_REPO_ID:-dominicdx/so101_overhead}"
 OUTPUT_DIR="${OUTPUT_DIR:-$REPO_ROOT/artifacts/train/act_so101_overhead}"
 JOB_NAME="${JOB_NAME:-act_so101_overhead}"

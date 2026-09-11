@@ -11,10 +11,10 @@ nvidia-smi
 ## 1) Install LeRobot outside this repository
 
 ```bash
-cd /home/yonghokim/repo/aiet2-il
+cd <repo-root>
 chmod +x scripts/install_lerobot.sh scripts/train_act_so101_overhead.sh
 ./scripts/install_lerobot.sh
-source ~/repo/lerobot/.venv/bin/activate
+source ../lerobot/.venv/bin/activate
 lerobot-info
 ```
 
@@ -34,16 +34,16 @@ wandb login
 ## 3) Start ACT training (SO101 overhead dataset)
 
 ```bash
-cd /home/yonghokim/repo/aiet2-il
-source ~/repo/lerobot/.venv/bin/activate
+cd <repo-root>
+source ../lerobot/.venv/bin/activate
 ./scripts/train_act_so101_overhead.sh
 ```
 
 ## 4) Training with explicit options
 
 ```bash
-cd /home/yonghokim/repo/aiet2-il
-source ~/repo/lerobot/.venv/bin/activate
+cd <repo-root>
+source ../lerobot/.venv/bin/activate
 DEVICE=cuda \
 WANDB_ENABLE=true \
 POLICY_REPO_ID=<your-hf-username>/act_so101_overhead \
@@ -53,8 +53,8 @@ POLICY_REPO_ID=<your-hf-username>/act_so101_overhead \
 ## 5) Resume from a checkpoint
 
 ```bash
-cd /home/yonghokim/repo/aiet2-il
-source ~/repo/lerobot/.venv/bin/activate
+cd <repo-root>
+source ../lerobot/.venv/bin/activate
 ./scripts/train_act_so101_overhead.sh --resume=true
 ```
 or:
@@ -65,8 +65,8 @@ lerobot-train --config_path=<your-hf-username>/act_so101_overhead --resume=true
 ## 6) Quick smoke run (short training)
 
 ```bash
-cd /home/yonghokim/repo/aiet2-il
-source ~/repo/lerobot/.venv/bin/activate
+cd <repo-root>
+source ../lerobot/.venv/bin/activate
 ./scripts/train_act_so101_overhead.sh --steps=200 --job_name=act_so101_overhead_smoke
 ```
 
@@ -74,10 +74,10 @@ source ~/repo/lerobot/.venv/bin/activate
 
 ```text
 Local training outputs:
-/home/yonghokim/repo/aiet2-il/artifacts/train/act_so101_overhead
+./artifacts/train/act_so101_overhead
 
 LeRobot install:
-/home/yonghokim/repo/lerobot
+../lerobot
 ```
 
 ## 8) Dataset confirmation
