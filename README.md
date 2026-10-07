@@ -16,3 +16,8 @@
 
 - Guide: [docs/groot_so101.md](./docs/groot_so101.md)
 - Training script (supports embodiment prompt): [scripts/train_vla_policy.sh](./scripts/train_vla_policy.sh)
+
+## Open-loop evaluation (SmolVLA + Pi0.5)
+
+- Guide: [docs/open_loop_eval_smolvla_pi05.md](./docs/open_loop_eval_smolvla_pi05.md)
+- Eval script: [scripts/open_loop_eval.py](./scripts/open_loop_eval.py)
